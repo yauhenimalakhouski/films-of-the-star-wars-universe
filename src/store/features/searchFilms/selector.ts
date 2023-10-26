@@ -1,0 +1,1 @@
+// export const searchFilmsModule = (state) => state.searchFilms;
