@@ -5,8 +5,6 @@ import { Film } from "@/types/types";
 
 import { searchFilmsSlice } from "@/store/features/searchFilms";
 import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "@/store";
 import { searchFilmsModule } from "@/store/features/searchFilms/selector";
 
 type AppProps = {
@@ -14,9 +12,10 @@ type AppProps = {
 };
 
 export const SearchInput = ({ films }: AppProps) => {
-  const searchTextFromStore = useSelector(searchFilmsModule)
-  const [searchText, setSearchText] = useState("");
-  
+  const searchTextFromStore = useAppSelector(searchFilmsModule);
+  console.log(searchTextFromStore)
+  const [searchText, setSearchText] = useState(searchTextFromStore);
+
   const dispatch = useAppDispatch();
   const filteredFilms = films.filter((film) => {
     return (
@@ -29,8 +28,10 @@ export const SearchInput = ({ films }: AppProps) => {
       <input
         value={searchText || ""}
         onChange={(event) => {
-          setSearchText(event.target.value)
-          dispatch(searchFilmsSlice.actions.putSearchString(searchText))
+          setSearchText(event.target.value);
+          dispatch(
+            searchFilmsSlice.actions.putSearchString(event.target.value)
+          );
         }}
         placeholder="Search by Episode Number, Episode Title"
       />
