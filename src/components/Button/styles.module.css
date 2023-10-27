@@ -1,0 +1,52 @@
+.root {
+    width: 100px;
+    border: 1px solid #5b5b5b;
+    background-color: rgb(25, 88, 139);
+    border-radius: 10px;
+    color: var(--main-text-color);
+    padding: 4px 8px;
+    min-width: 25px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    transition: border-color 0.2s background-color 0.2s;
+  }
+
+  .btn_theme {
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    background-size: 75%;
+    padding: 5px;
+    -webkit-box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
+    box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
+    cursor: pointer;
+  }
+  
+  .btn_theme {
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    appearance: none;
+    border-radius: 5px;
+    background-size: 75%;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .btn_theme.dark {
+    background: url("images/moon-active.svg") no-repeat 50% 50% azure;
+    color: azure;
+    outline: solid 1px violet;
+  }
+  
+  .btn_theme.light {
+    background: url("images/sun-active.svg") no-repeat 50% 50% rgb(0, 0, 0, 0.95);
+    color: rgba(8, 8, 8, 0.95);
+    outline: solid 1px azure;
+  }

@@ -3,7 +3,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
   reducerPath: "api",
-
   baseQuery: fetchBaseQuery({
     baseUrl: "https://desfarik.github.io/star-wars/api/",
   }),
@@ -12,11 +11,8 @@ export const api = createApi({
       query: () => ({
         url: "film/all.json",
       }),
-
     }),
   }),
 });
 
-export const {
-    useGetFilmsQuery,
-} = api;
+export const { useGetFilmsQuery } = api;

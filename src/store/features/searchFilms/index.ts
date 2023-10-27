@@ -1,13 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface SearchState {
-    currentSearch: string;
-  }
+  currentSearch: string;
+}
 
-const initialState:SearchState = {
-    currentSearch: "",
-  };
-
+const initialState: SearchState = {
+  currentSearch: "",
+};
 
 export const searchFilmsSlice = createSlice({
   name: "searchFilms",

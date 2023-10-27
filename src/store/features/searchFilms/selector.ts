@@ -1,4 +1,4 @@
-import { RootState, store } from "@/store";
+import { RootState } from "@/store";
 
-
-export const searchFilmsModule = (state:RootState) => state.searchFilms.currentSearch;
+export const searchFilmsModule = (state: RootState) =>
+  state.searchFilms.currentSearch;
