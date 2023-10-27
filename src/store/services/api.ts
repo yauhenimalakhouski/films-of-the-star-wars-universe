@@ -1,20 +1,18 @@
+import { Film } from "@/types/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
   reducerPath: "api",
-  tagTypes: [],
+
   baseQuery: fetchBaseQuery({
     baseUrl: "https://desfarik.github.io/star-wars/api/",
   }),
   endpoints: (builder) => ({
-    getFilms: builder.query({
+    getFilms: builder.query<Film[], undefined>({
       query: () => ({
-        url: "all.json",
+        url: "film/all.json",
       }),
-    //   providesTags: (result) =>
-    //     (result || [])
-    //       .map(({ id }) => ({ type: "Films", id }))
-    //       .concat({ type: "Films", id: "LIST" }),
+
     }),
   }),
 });

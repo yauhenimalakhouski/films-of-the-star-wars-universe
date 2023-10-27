@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SearchInputContainer } from "../SearchInput/container";
-
 // type AppProps = {
 //     films: 
 // }
@@ -19,7 +18,7 @@ export const Header = () => {
         </Link>
       </div>
       <div>
-        <SearchInputContainer/>
+          <SearchInputContainer/>
       </div>
     </header>
   );

@@ -1,11 +1,11 @@
-// import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-// export const searchFilmsSlice = createSlice({
-//   name: "searchFilms",
-//   initialState: [],
-//   reducers: {
-//     putSearchFilms: (state, { payload }) => {
-//       state = state[payload];
-//     },
-//   },
-// });
+export const searchFilmsSlice = createSlice({
+  name: "searchFilms",
+  initialState: "",
+  reducers: {
+    putSearchString: (state, { payload }) => {
+      state = state[payload];
+    },
+  },
+});

@@ -4,6 +4,7 @@
   "_version": "2.0.0",
 
   "compilerOptions": {
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
