@@ -8,6 +8,7 @@ import { favoriteFilms } from "@/store/features/favorites/selector";
 import { addFilm, removeFilm } from "@/store/features/favorites";
 import { useDispatch } from "react-redux";
 
+
 type CompProps = {
   film: Film;
 };
@@ -25,7 +26,6 @@ export const Movie = ({ film }: CompProps) => {
       dispatch(addFilm(film));
     }
   };
-
   return (
     <div>
       <Link href={`/film/${film.id}`}>
