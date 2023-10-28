@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 import { Button } from "../Button/component";
 
 const LOCAL_STORAGE_KEY:string = "theme";
-let themeLocal;
+let savedTheme;
 
 export const ThemeButton = () => {
   const [theme, setTheme] = useState<string>("dark");
   useEffect(() => {
     if (typeof window !== "undefined") {
-      themeLocal = localStorage.getItem(LOCAL_STORAGE_KEY);
-      if (themeLocal) {
-        setTheme(themeLocal);
+      savedTheme = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (savedTheme) {
+        setTheme(savedTheme);
       }
     }
   }, []);

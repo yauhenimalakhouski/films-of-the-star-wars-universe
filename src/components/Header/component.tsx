@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SearchInputContainer } from "../SearchInput/container";
 import { ThemeButton } from "../ThemeButton/component";
+import { LocalizationButton } from "../LocalizationButton/component";
 
 
 
@@ -18,8 +19,8 @@ export const Header = () => {
       </div>
       <div className="settings">
         <ThemeButton/>
-        {/* <LocalizationButton />
-        <Favorites /> */}
+        <LocalizationButton />
+        {/* <Favorites /> */}
       </div>
     </header>
   );
