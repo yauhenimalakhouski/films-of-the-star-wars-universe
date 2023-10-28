@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import { api } from "./services/api";
 import { loggerMiddleware } from "./middlewares/logger";
 import { searchFilmsSlice } from "./features/searchFilms";
+import { favoritesSlice } from "./features/favorites";
 
 
 
 export const store = configureStore({
   reducer: {
     searchFilms: searchFilmsSlice.reducer,
+    favorites: favoritesSlice.reducer,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), api.middleware, loggerMiddleware,] as const,
