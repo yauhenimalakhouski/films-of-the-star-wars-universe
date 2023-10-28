@@ -3,8 +3,7 @@ import Link from "next/link";
 import { SearchInputContainer } from "../SearchInput/container";
 import { ThemeButton } from "../ThemeButton/component";
 import { LocalizationButton } from "../LocalizationButton/component";
-
-
+// import { FavoritesContainer } from "../Favorites/container";
 
 export const Header = () => {
   return (
@@ -18,9 +17,9 @@ export const Header = () => {
         <SearchInputContainer />
       </div>
       <div className="settings">
-        <ThemeButton/>
+        <ThemeButton />
         <LocalizationButton />
-        {/* <Favorites /> */}
+        {/* <FavoritesContainer /> */}
       </div>
     </header>
   );

@@ -7,11 +7,11 @@ import { searchFilmsSlice } from "@/store/features/searchFilms";
 import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { searchFilmsModule } from "@/store/features/searchFilms/selector";
 
-type AppProps = {
+type CompProps = {
   films: Film[];
 };
 
-export const SearchInput = ({ films }: AppProps) => {
+export const SearchInput = ({ films }: CompProps) => {
   const searchTextFromStore = useAppSelector(searchFilmsModule);
   console.log(searchTextFromStore)
   const [searchText, setSearchText] = useState(searchTextFromStore);
