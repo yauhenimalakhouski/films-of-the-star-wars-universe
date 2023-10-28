@@ -11,6 +11,7 @@
     text-align: center;
     font-weight: bold;
     transition: border-color 0.2s background-color 0.2s;
+    cursor: pointer;
   }
 
   .btn_theme {
@@ -25,7 +26,6 @@
     padding: 5px;
     -webkit-box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
     box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
-    cursor: pointer;
   }
   
   .btn_theme {
@@ -36,7 +36,6 @@
     border-radius: 5px;
     background-size: 75%;
     padding: 5px;
-    cursor: pointer;
   }
   
   .btn_theme.dark {

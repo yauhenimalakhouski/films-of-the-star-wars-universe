@@ -1,7 +1,11 @@
-import { fetchFilms } from "@/services/api"
+"use client";
+import { useGetFilmsQuery } from "@/store/services/api";
 import { Films } from "./component"
 
-export async function FilmsContainer(){
-    const films = await fetchFilms();
-    return <Films films = {films}></Films>
+export const FilmsContainer = () => {
+    const {data: films, isFetching, isSuccess} = useGetFilmsQuery(undefined);
+    if(isSuccess){
+        return <Films films = {films}></Films>
+    }
+   
 }
