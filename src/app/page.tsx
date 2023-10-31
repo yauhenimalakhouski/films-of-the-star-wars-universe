@@ -4,7 +4,11 @@ import { FilmsSortBar } from "@/components/FilmsSortBar/component";
 export default function Home() {
   return (
     <main>
-      {/* <FilmsSortBar/> */}
+      
+      <div>
+          <FilmsSortBar/>
+          {/* <FilmsDisplayType/> */}
+      </div>
       <FilmsContainer></FilmsContainer>
     </main>
   )
