@@ -6,24 +6,24 @@ import { loadSortTypeFromLocalStorage } from "@/utils/localStorage";
 import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { searchFilmsModule } from "@/store/features/searchFilms/selector";
 import { useEffect, useState } from "react";
+import { selectSortTypeValue } from "@/store/features/sortType/selectors";
 
 export const FilmsContainer = () => {
   const { data: films, isFetching, isSuccess } = useGetFilmsQuery(undefined);
- 
-
 
   const searchTextFromStore = useAppSelector(searchFilmsModule);
+  const sortTypeValue = useAppSelector(selectSortTypeValue);
   const [searchText, setSearchText] = useState(searchTextFromStore);
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     setSearchText(searchTextFromStore);
-  }, [searchTextFromStore])
+  }, [searchTextFromStore]);
 
-
-  if(!films){
+  if (!films) {
     return null;
   }
-  const sortType = getSortFn(loadSortTypeFromLocalStorage());
+
+  const sortTypeFn = getSortFn(sortTypeValue);
 
   const filteredFilms = films.slice().filter((film) => {
     return (
@@ -31,10 +31,8 @@ export const FilmsContainer = () => {
       String(film.episode_id).includes(searchText)
     );
   });
-  
-  const currentFilmsSorted = filteredFilms.sort(sortType);
 
-  
-    return <Films films={currentFilmsSorted}></Films>;
-  
+  const currentFilmsSorted = filteredFilms.sort(sortTypeFn);
+
+  return <Films films={currentFilmsSorted}></Films>;
 };

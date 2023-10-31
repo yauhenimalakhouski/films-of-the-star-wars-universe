@@ -1,5 +1,7 @@
 "use client";
 
+import { sortTypeSlice } from "@/store/features/sortType";
+import { useAppDispatch } from "@/store/reduxHooks/reduxHooks";
 import {
   loadSortTypeFromLocalStorage,
   saveSortTypeToLocalStorage,
@@ -10,7 +12,7 @@ let savedSortType;
 
 export const FilmsSortBar = () => {
   const [sortType, setSortType] = useState<string>("episode-up");
-
+  const dispatch = useAppDispatch();
   useEffect(() => {
     if (typeof window !== "undefined") {
       savedSortType = loadSortTypeFromLocalStorage();
@@ -31,6 +33,7 @@ export const FilmsSortBar = () => {
           onChange={(event) => {
             setSortType(event.currentTarget.value);
             saveSortTypeToLocalStorage(event.currentTarget.value);
+            dispatch(sortTypeSlice.actions.putSortType(event.currentTarget.value))
           }}
           
         >
