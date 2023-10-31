@@ -1,3 +1,5 @@
+"use client";
+
 import { FILMS_IMG } from "@/consts/filmsImg";
 import Image from "next/image";
 import Link from "next/link";

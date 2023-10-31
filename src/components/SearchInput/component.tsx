@@ -35,11 +35,6 @@ export const SearchInput = ({ films }: CompProps) => {
         }}
         placeholder="Search by Episode Number, Episode Title"
       />
-      <div>
-        {filteredFilms.map((film) => (
-          <div key={film.episode_id}>{film.title}</div>
-        ))}
-      </div>
     </div>
   );
 };
