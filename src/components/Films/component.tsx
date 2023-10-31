@@ -7,7 +7,7 @@ type CompProps = {
 
 export const Films = ({ films }: CompProps) => {
   const currentFilms = films;
-
+  
   return (
     <div>
       {currentFilms.map((film) => (

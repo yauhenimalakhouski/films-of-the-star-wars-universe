@@ -6,7 +6,7 @@ import { Film } from "@/types/types";
 import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { favoriteFilms } from "@/store/features/favorites/selector";
 import { addFilm, removeFilm } from "@/store/features/favorites";
-import { useDispatch } from "react-redux";
+
 
 
 type CompProps = {
@@ -14,9 +14,9 @@ type CompProps = {
 };
 
 export const Movie = ({ film }: CompProps) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const favorites = useAppSelector(favoriteFilms);
-  console.log(favorites);
+    console.log(favorites);
   const isFavorite = favorites.some((favMovie) => favMovie.id === film.id);
 
   const handleToggleFavorite = () => {
@@ -47,7 +47,7 @@ export const Movie = ({ film }: CompProps) => {
             <div>{`${film.release_date}`}</div>
             <div>{`${film.producer}`}</div>
           </div>
-          <Button onClick={handleToggleFavorite}>add</Button>
+          <Button onClick={handleToggleFavorite}>{isFavorite? "remove":"add"}</Button>
         </div>
         <div>{film.opening_crawl}</div>
       </div>
