@@ -4,14 +4,14 @@ import { Films } from "./component";
 import { getSortFn } from "@/utils/sotrFn";
 import { loadSortTypeFromLocalStorage } from "@/utils/localStorage";
 import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
-import { searchFilmsModule } from "@/store/features/searchFilms/selector";
+import { selectSearchFilmsValue } from "@/store/features/searchFilms/selector";
 import { useEffect, useState } from "react";
 import { selectSortTypeValue } from "@/store/features/sortType/selectors";
 
 export const FilmsContainer = () => {
   const { data: films, isFetching, isSuccess } = useGetFilmsQuery(undefined);
 
-  const searchTextFromStore = useAppSelector(searchFilmsModule);
+  const searchTextFromStore = useAppSelector(selectSearchFilmsValue);
   const sortTypeValue = useAppSelector(selectSortTypeValue);
   const [searchText, setSearchText] = useState(searchTextFromStore);
 

@@ -1,4 +1,4 @@
 import { RootState } from "@/store";
 
-export const searchFilmsModule = (state: RootState) =>
+export const selectSearchFilmsValue = (state: RootState) =>
   state.searchFilms.currentSearch;

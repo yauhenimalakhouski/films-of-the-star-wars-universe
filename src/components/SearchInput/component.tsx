@@ -5,24 +5,13 @@ import { Film } from "@/types/types";
 
 import { searchFilmsSlice } from "@/store/features/searchFilms";
 import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
-import { searchFilmsModule } from "@/store/features/searchFilms/selector";
+import { selectSearchFilmsValue } from "@/store/features/searchFilms/selector";
 
-type CompProps = {
-  films: Film[];
-};
-
-export const SearchInput = ({ films }: CompProps) => {
-  const searchTextFromStore = useAppSelector(searchFilmsModule);
-  // console.log(searchTextFromStore)
+export const SearchInput = () => {
+  const searchTextFromStore = useAppSelector(selectSearchFilmsValue);
   const [searchText, setSearchText] = useState(searchTextFromStore);
-
   const dispatch = useAppDispatch();
-  // const filteredFilms = films.filter((film) => {
-  //   return (
-  //     film.title.toLowerCase().includes(searchText) ||
-  //     String(film.episode_id).includes(searchText)
-  //   );
-  // });
+
   return (
     <div>
       <input

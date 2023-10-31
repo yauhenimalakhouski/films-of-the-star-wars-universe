@@ -1,4 +1,4 @@
 import { RootState } from "@/store";
 
-export const favoriteFilms = (state: RootState) => state.favorites.films;
+export const selectFavoriteFilms = (state: RootState) => state.favorites.films;
 

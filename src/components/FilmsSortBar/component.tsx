@@ -21,21 +21,20 @@ export const FilmsSortBar = () => {
       }
     }
   }, []);
-  
-
 
   return (
     <div>
       <span>Sort by:</span>
       <div>
         <select
-        value={sortType}
+          value={sortType}
           onChange={(event) => {
             setSortType(event.currentTarget.value);
             saveSortTypeToLocalStorage(event.currentTarget.value);
-            dispatch(sortTypeSlice.actions.putSortType(event.currentTarget.value))
+            dispatch(
+              sortTypeSlice.actions.putSortType(event.currentTarget.value)
+            );
           }}
-          
         >
           <option value="episode-up">From the first episode</option>
           <option value="episode-down">From the last episode</option>
