@@ -13,16 +13,16 @@ type CompProps = {
 
 export const SearchInput = ({ films }: CompProps) => {
   const searchTextFromStore = useAppSelector(searchFilmsModule);
-  console.log(searchTextFromStore)
+  // console.log(searchTextFromStore)
   const [searchText, setSearchText] = useState(searchTextFromStore);
 
   const dispatch = useAppDispatch();
-  const filteredFilms = films.filter((film) => {
-    return (
-      film.title.toLowerCase().includes(searchText) ||
-      String(film.episode_id).includes(searchText)
-    );
-  });
+  // const filteredFilms = films.filter((film) => {
+  //   return (
+  //     film.title.toLowerCase().includes(searchText) ||
+  //     String(film.episode_id).includes(searchText)
+  //   );
+  // });
   return (
     <div>
       <input

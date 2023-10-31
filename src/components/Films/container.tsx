@@ -1,10 +1,40 @@
 "use client";
 import { useGetFilmsQuery } from "@/store/services/api";
 import { Films } from "./component";
+import { getSortFn } from "@/utils/sotrFn";
+import { loadSortTypeFromLocalStorage } from "@/utils/localStorage";
+import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
+import { searchFilmsModule } from "@/store/features/searchFilms/selector";
+import { useEffect, useState } from "react";
 
 export const FilmsContainer = () => {
   const { data: films, isFetching, isSuccess } = useGetFilmsQuery(undefined);
-  if (isSuccess) {
-    return <Films films={films}></Films>;
+ 
+
+
+  const searchTextFromStore = useAppSelector(searchFilmsModule);
+  const [searchText, setSearchText] = useState(searchTextFromStore);
+  
+  useEffect(()=>{
+    setSearchText(searchTextFromStore);
+  }, [searchTextFromStore])
+
+
+  if(!films){
+    return null;
   }
+  const sortType = getSortFn(loadSortTypeFromLocalStorage());
+
+  const filteredFilms = films.slice().filter((film) => {
+    return (
+      film.title.toLowerCase().includes(searchText) ||
+      String(film.episode_id).includes(searchText)
+    );
+  });
+  
+  const currentFilmsSorted = filteredFilms.sort(sortType);
+
+  
+    return <Films films={currentFilmsSorted}></Films>;
+  
 };
