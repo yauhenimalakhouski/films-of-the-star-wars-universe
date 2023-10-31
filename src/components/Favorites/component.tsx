@@ -9,6 +9,6 @@ type CompProps = {
 export const Favorites = ({films}: CompProps) => {
     return (<div>
         <Button>Favorites films</Button>
-        <div>{films.map(film => <div></div>)}</div>
+        {/* <div>{films.map(film => <div></div>)}</div> */}
     </div>)
 }
