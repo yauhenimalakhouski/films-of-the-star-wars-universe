@@ -1,0 +1,14 @@
+.root {
+
+}
+
+
+.tile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr;
+}
