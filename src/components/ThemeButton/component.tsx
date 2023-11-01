@@ -20,6 +20,7 @@ export const ThemeButton = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem(LOCAL_STORAGE_KEY, theme);
+      document.documentElement.setAttribute('theme', theme);
     }
   }, [theme]);
 
