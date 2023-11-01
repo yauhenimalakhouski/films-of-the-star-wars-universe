@@ -1,0 +1,17 @@
+.root {
+    width: 100%;
+	box-shadow: var(--film-boxshadow) 0 1.1875rem 2.125rem -0.9375rem;
+	border-radius: 20px;
+	background: var(--film-background-color);
+}
+
+.table {
+    width: 80%;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+}
+
+.tile {
+    
+}

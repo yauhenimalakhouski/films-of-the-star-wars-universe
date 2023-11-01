@@ -16,7 +16,7 @@ export const Films = ({ films, filmsView }: CompProps) => {
       [stylesComponent.tile]: filmsView === "tile",
     })}>
       {films.map((film) => (
-        <Movie key={film.id} film={film} />
+        <Movie key={film.id} film={film} filmsView = {filmsView}/>
       ))}
     </div>
   );

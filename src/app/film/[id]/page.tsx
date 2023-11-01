@@ -12,7 +12,7 @@ export default async function FilmPage({ params: { id } }: PageProps) {
 
   return (
     <div>
-      <Movie film={film}></Movie>
+      <Movie film={film} filmsView={"table"}></Movie>
     </div>
   );
 }

@@ -9,11 +9,15 @@ import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { selectFavoriteFilms } from "@/store/features/favorites/selector";
 import { addFilm, removeFilm } from "@/store/features/favorites";
 
+import styles from "./styles.module.css";
+import classNames from "classnames";
+
 type CompProps = {
   film: Film;
+  filmsView: string;
 };
 
-export const Movie = ({ film }: CompProps) => {
+export const Movie = ({ film, filmsView }: CompProps) => {
   const dispatch = useAppDispatch();
   const favorites = useAppSelector(selectFavoriteFilms);
   const isFavorite = favorites.some((favMovie) => favMovie.id === film.id);
@@ -26,7 +30,9 @@ export const Movie = ({ film }: CompProps) => {
     }
   };
   return (
-    <div>
+    <div className={classNames(styles.root, {
+      [styles.table]: filmsView === "table",
+    })}>
       <Link href={`/film/${film.id}`}>
         <Image
           width={300}
