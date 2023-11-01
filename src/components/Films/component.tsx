@@ -6,17 +6,17 @@ import classNames from "classnames";
 
 type CompProps = {
   films: Film[];
-  filmsView: string;
+  filmsViewType: string;
 };
 
-export const Films = ({ films, filmsView }: CompProps) => {
+export const Films = ({ films, filmsViewType }: CompProps) => {
   return (
     <div className={classNames(stylesComponent.root, {
-      [stylesComponent.table]: filmsView === "table",
-      [stylesComponent.tile]: filmsView === "tile",
+      [stylesComponent.table]: filmsViewType === "table",
+      [stylesComponent.tile]: filmsViewType === "tile",
     })}>
       {films.map((film) => (
-        <Movie key={film.id} film={film} filmsView = {filmsView}/>
+        <Movie key={film.id} film={film} filmsViewType = {filmsViewType}/>
       ))}
     </div>
   );

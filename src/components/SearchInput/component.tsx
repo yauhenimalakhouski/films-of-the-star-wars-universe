@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { Film } from "@/types/types";
+
 
 import { searchFilmsSlice } from "@/store/features/searchFilms";
 import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";

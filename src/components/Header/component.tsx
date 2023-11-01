@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SearchInputContainer } from "../SearchInput/container";
+
 import { ThemeButton } from "../ThemeButton/component";
 import { LocalizationButton } from "../LocalizationButton/component";
+import { SearchInput } from "../SearchInput/component";
 // import { FavoritesContainer } from "../Favorites/container";
 
 export const Header = () => {
@@ -14,7 +15,7 @@ export const Header = () => {
         </Link>
       </div>
       <div className="search_bar">
-        <SearchInputContainer />
+        <SearchInput />
       </div>
       <div className="settings">
         <ThemeButton />

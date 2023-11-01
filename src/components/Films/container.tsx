@@ -5,11 +5,15 @@ import { getSortFn } from "@/utils/sotrFn";
 
 import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { selectSearchFilmsValue } from "@/store/features/searchFilms/selector";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { selectSortTypeValue } from "@/store/features/sortType/selectors";
 import { Button } from "../Button/component";
 
 import styles from "./styles.module.css";
+import { FilmsSortBar } from "../FilmsSortBar/component";
+
+const LOCAL_STORAGE_KEY: string = "filmViewType";
+let savedViewType;
 
 export const FilmsContainer = () => {
   const { data: films, isFetching, isSuccess } = useGetFilmsQuery(undefined);
@@ -17,11 +21,26 @@ export const FilmsContainer = () => {
   const searchTextFromStore = useAppSelector(selectSearchFilmsValue);
   const sortTypeValue = useAppSelector(selectSortTypeValue);
   const [searchText, setSearchText] = useState(searchTextFromStore);
-  const [filmsView, setFilmsView] = useState<string>('tile');
+  const [filmsViewType, setFilmsViewType] = useState<string>("tile");
 
   useEffect(() => {
     setSearchText(searchTextFromStore);
   }, [searchTextFromStore]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      savedViewType = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (savedViewType) {
+        setFilmsViewType(savedViewType);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem(LOCAL_STORAGE_KEY, filmsViewType);
+    }
+  }, [filmsViewType]);
 
   if (!films) {
     return null;
@@ -39,22 +58,31 @@ export const FilmsContainer = () => {
   const currentFilmsSorted = filteredFilms.sort(sortTypeFn);
 
   return (
-    <div>
+    <Fragment>
       <div>
+        <FilmsSortBar />
         <div>
-          <Button onClick={()=>{
-            if(filmsView !== "table"){
-              setFilmsView("table")
-            }
-          }}>table</Button>
-          <Button onClick={()=>{
-            if(filmsView !== "tile"){
-              setFilmsView("tile")
-            }
-          }}>tile</Button>
+          <Button
+            onClick={() => {
+              if (filmsViewType !== "table") {
+                setFilmsViewType("table");
+              }
+            }}
+          >
+            table
+          </Button>
+          <Button
+            onClick={() => {
+              if (filmsViewType !== "tile") {
+                setFilmsViewType("tile");
+              }
+            }}
+          >
+            tile
+          </Button>
         </div>
       </div>
-      <Films films={currentFilmsSorted} filmsView = {filmsView}></Films>;
-    </div>
+      <Films films={currentFilmsSorted} filmsViewType={filmsViewType}></Films>;
+    </Fragment>
   );
 };

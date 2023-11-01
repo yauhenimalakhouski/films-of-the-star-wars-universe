@@ -14,10 +14,10 @@ import classNames from "classnames";
 
 type CompProps = {
   film: Film;
-  filmsView: string;
+  filmsViewType: string;
 };
 
-export const Movie = ({ film, filmsView }: CompProps) => {
+export const Movie = ({ film, filmsViewType }: CompProps) => {
   const dispatch = useAppDispatch();
   const favorites = useAppSelector(selectFavoriteFilms);
   const isFavorite = favorites.some((favMovie) => favMovie.id === film.id);
@@ -31,7 +31,7 @@ export const Movie = ({ film, filmsView }: CompProps) => {
   };
   return (
     <div className={classNames(styles.root, {
-      [styles.table]: filmsView === "table",
+      [styles.table]: filmsViewType === "table",
     })}>
       <Link href={`/film/${film.id}`}>
         <Image
