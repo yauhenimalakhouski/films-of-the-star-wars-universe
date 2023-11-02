@@ -2,17 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "../Button/component";
+import { useAppDispatch } from "@/store/reduxHooks/reduxHooks";
+import { loadLangFromLocalStorage, saveLangToLocalStorage } from "@/utils/localStorage";
+import { saveLang } from "@/store/features/userSettings";
 
-const LOCAL_STORAGE_KEY: string = "lang";
+
 
 let savedLang;
 
 export const LocalizationButton = () => {
   const [lang, setLang] = useState<string>("en");
-
+  const dispatch = useAppDispatch();
   useEffect(() => {
     if (typeof window !== "undefined") {
-      savedLang = localStorage.getItem(LOCAL_STORAGE_KEY);
+      savedLang = loadLangFromLocalStorage();
       if (savedLang) {
         setLang(savedLang);
       }
@@ -21,13 +24,16 @@ export const LocalizationButton = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem(LOCAL_STORAGE_KEY, lang);
+      saveLangToLocalStorage(lang);
+      dispatch(saveLang(lang));
     }
   }, [lang]);
 
   return (
     <Button
-      onClick={() => setLang(lang === "ru" ? "en" : "ru")}
+      onClick={() => {
+        setLang(lang === "ru" ? "en" : "ru");
+      }}
       type={"btn_lang"}
       switchType={`${lang}`}
     >

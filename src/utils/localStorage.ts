@@ -29,3 +29,12 @@ export function loadSortTypeFromLocalStorage(): string {
 export function saveSortTypeToLocalStorage(sortType: string): void {
   localStorage.setItem("sortType", sortType);
 }
+
+export function loadLangFromLocalStorage(): string {
+  const lang = localStorage.getItem("lang");
+  return lang ? lang : "en";
+}
+
+export function saveLangToLocalStorage(lang: string): void {
+  localStorage.setItem("lang", lang);
+}

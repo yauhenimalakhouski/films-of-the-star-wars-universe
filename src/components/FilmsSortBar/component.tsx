@@ -1,7 +1,8 @@
 "use client";
 
 import { saveSortTypeInStore } from "@/store/features/userSettings";
-import { useAppDispatch } from "@/store/reduxHooks/reduxHooks";
+import { selectLang } from "@/store/features/userSettings/selectors";
+import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import {
   loadSortTypeFromLocalStorage,
   saveSortTypeToLocalStorage,
@@ -12,6 +13,7 @@ let savedSortType;
 
 export const FilmsSortBar = () => {
   const [sortType, setSortType] = useState<string>("episode-up");
+  const lang = useAppSelector(selectLang);
   const dispatch = useAppDispatch();
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -31,15 +33,21 @@ export const FilmsSortBar = () => {
           onChange={(event) => {
             setSortType(event.currentTarget.value);
             saveSortTypeToLocalStorage(event.currentTarget.value);
-            dispatch(
-              saveSortTypeInStore(event.currentTarget.value)
-            );
+            dispatch(saveSortTypeInStore(event.currentTarget.value));
           }}
         >
-          <option value="episode-up">From the first episode</option>
-          <option value="episode-down">From the last episode</option>
-          <option value="film-release-up">From old to new</option>
-          <option value="film-release-down">From new to old</option>
+          <option value="episode-up">
+            {lang === "en" ? "From the first episode" : "С первого эпизода"}
+          </option>
+          <option value="episode-down">
+            {lang === "en" ? "From the last episode" : "С последнего эпизода"}
+          </option>
+          <option value="film-release-up">
+            {lang === "en" ? "From old to new" : "От старых к новым"}
+          </option>
+          <option value="film-release-down">
+            {lang === "en" ? "From new to old" : "От новых к старым"}
+          </option>
         </select>
       </div>
     </div>
