@@ -12,8 +12,10 @@ export const searchFilmsSlice = createSlice({
   name: "searchFilms",
   initialState,
   reducers: {
-    putSearchString: (state, action: PayloadAction<string>) => {
+    saveSearchString: (state, action: PayloadAction<string>) => {
       state.currentSearch = action.payload;
     },
   },
 });
+
+export const {saveSearchString} = searchFilmsSlice.actions;

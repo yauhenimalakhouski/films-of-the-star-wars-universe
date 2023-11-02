@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 
-import { searchFilmsSlice } from "@/store/features/searchFilms";
+import { saveSearchString } from "@/store/features/searchFilms";
 import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { selectSearchFilmsValue } from "@/store/features/searchFilms/selector";
 
@@ -19,7 +19,7 @@ export const SearchInput = () => {
         onChange={(event) => {
           setSearchText(event.target.value);
           dispatch(
-            searchFilmsSlice.actions.putSearchString(event.target.value)
+            saveSearchString(event.target.value)
           );
         }}
         placeholder="Search by Episode Number, Episode Title"
