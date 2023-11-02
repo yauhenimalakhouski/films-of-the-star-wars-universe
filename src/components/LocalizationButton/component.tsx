@@ -27,17 +27,17 @@ export const LocalizationButton = () => {
       saveLangToLocalStorage(lang);
       dispatch(saveLang(lang));
     }
-  }, [lang]);
+  }, [lang, dispatch]);
 
   return (
+    <div>
     <Button
       onClick={() => {
         setLang(lang === "ru" ? "en" : "ru");
       }}
-      type={"btn_lang"}
-      switchType={`${lang}`}
     >
       {lang}
     </Button>
+    </div>
   );
 };

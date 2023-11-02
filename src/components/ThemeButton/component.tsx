@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "../Button/component";
 
-const LOCAL_STORAGE_KEY:string = "theme";
+const LOCAL_STORAGE_KEY: string = "theme";
 let savedTheme;
 
 export const ThemeButton = () => {
@@ -20,15 +20,19 @@ export const ThemeButton = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem(LOCAL_STORAGE_KEY, theme);
-      document.documentElement.setAttribute('theme', theme);
+      document.documentElement.setAttribute("theme", theme);
     }
   }, [theme]);
 
   return (
-    <Button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      type={`btn_theme`}
-      switchType={`${theme}`}
-    >{theme}</Button>
+    <div>
+      <Button
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        type={`btn_theme`}
+        switchType={`${theme}`}
+      >
+        {theme}
+      </Button>
+    </div>
   );
 };

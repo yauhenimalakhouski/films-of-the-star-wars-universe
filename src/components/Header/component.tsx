@@ -14,9 +14,7 @@ export const Header = () => {
           <Image src="icon.svg" width="75" height="75" alt="Logo" priority />
         </Link>
       </div>
-      <div className="search_bar">
-        <SearchInput />
-      </div>
+      <SearchInput />
       <div className="settings">
         <ThemeButton />
         <LocalizationButton />
