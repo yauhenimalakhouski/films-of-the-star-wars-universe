@@ -3,7 +3,7 @@ import { api } from "./services/api";
 import { loggerMiddleware } from "./middlewares/logger";
 import { searchFilmsSlice } from "./features/searchFilms";
 import { favoritesSlice } from "./features/favorites";
-import { sortTypeSlice } from "./features/sortType";
+import { userSettingsSlice } from "./features/userSettings";
 
 
 
@@ -11,7 +11,7 @@ export const store = configureStore({
   reducer: {
     searchFilms: searchFilmsSlice.reducer,
     favorites: favoritesSlice.reducer,
-    sortType: sortTypeSlice.reducer,
+    userSettings: userSettingsSlice.reducer,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), api.middleware, loggerMiddleware,] as const,

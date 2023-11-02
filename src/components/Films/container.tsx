@@ -6,7 +6,7 @@ import { getSortFn } from "@/utils/sotrFn";
 import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { selectSearchFilmsValue } from "@/store/features/searchFilms/selector";
 import { Fragment, useEffect, useState } from "react";
-import { selectSortTypeValue } from "@/store/features/sortType/selectors";
+import { selectSortTypeValue } from "@/store/features/userSettings/selectors";
 import { Button } from "../Button/component";
 
 import styles from "./styles.module.css";

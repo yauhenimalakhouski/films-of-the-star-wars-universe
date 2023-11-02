@@ -13,12 +13,14 @@ if(typeof window !== "undefined") {
     initialState.sortType = loadSortTypeFromLocalStorage();
 }
 
-export const sortTypeSlice = createSlice({
-    name:'sortType',
+export const userSettingsSlice = createSlice({
+    name:'userSettings',
     initialState,
     reducers:{
-        putSortType: (state, action: PayloadAction<string>) => {
+        saveSortTypeInStore: (state, action: PayloadAction<string>) => {
             state.sortType = action.payload;
         },
     },
 })
+
+export const {saveSortTypeInStore} = userSettingsSlice.actions;
