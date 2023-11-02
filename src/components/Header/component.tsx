@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ThemeButton } from "../ThemeButton/component";
 import { LocalizationButton } from "../LocalizationButton/component";
 import { SearchInput } from "../SearchInput/component";
-// import { FavoritesContainer } from "../Favorites/container";
+import { FavoritesContainer } from "../Favorites/container";
 
 export const Header = () => {
   return (
@@ -20,7 +20,7 @@ export const Header = () => {
       <div className="settings">
         <ThemeButton />
         <LocalizationButton />
-        {/* <FavoritesContainer /> */}
+        <FavoritesContainer />
       </div>
     </header>
   );

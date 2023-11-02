@@ -11,6 +11,7 @@ type FavoritesFilms = {
 let initialState: FavoritesFilms = {
   films: [],
 };
+
 if(typeof window !== "undefined") {     
     initialState = {
     films: loadFavoritesFromLocalStorage(),

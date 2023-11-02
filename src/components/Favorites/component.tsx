@@ -1,14 +1,21 @@
+"use client";
+
 import { Film } from "@/types/types";
-import { Button } from "../Button/component"
+import { Button } from "../Button/component";
 
 type CompProps = {
-    films: Film[];
-  };
-  
+  favoritesFilms: Film[];
+};
 
-export const Favorites = ({films}: CompProps) => {
-    return (<div>
-        <Button>Favorites films</Button>
-        {/* <div>{films.map(film => <div></div>)}</div> */}
-    </div>)
-}
+export const Favorites = ({ favoritesFilms }: CompProps) => {
+  return (
+    <div>
+      <Button>Favorites films</Button>
+      <div>
+        {favoritesFilms.map((film) => (
+          <div key={film.id}>{film.title}</div>
+        ))}
+      </div>
+    </div>
+  );
+};
