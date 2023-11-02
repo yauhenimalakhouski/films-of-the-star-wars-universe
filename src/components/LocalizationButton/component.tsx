@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "../Button/component";
 import { useAppDispatch } from "@/store/reduxHooks/reduxHooks";
-import { loadLangFromLocalStorage, saveLangToLocalStorage } from "@/utils/localStorage";
+import {
+  loadLangFromLocalStorage,
+  saveLangToLocalStorage,
+} from "@/utils/localStorage";
 import { saveLang } from "@/store/features/userSettings";
-
-
 
 let savedLang;
 
@@ -31,13 +31,15 @@ export const LocalizationButton = () => {
 
   return (
     <div>
-    <Button
-      onClick={() => {
-        setLang(lang === "ru" ? "en" : "ru");
-      }}
-    >
-      {lang}
-    </Button>
+      <select
+        value={lang}
+        onChange={() => {
+          setLang(lang === "ru" ? "en" : "ru");
+        }}
+      >
+        <option value="en">EN</option>
+        <option value="ru">RU</option>
+      </select>
     </div>
   );
 };

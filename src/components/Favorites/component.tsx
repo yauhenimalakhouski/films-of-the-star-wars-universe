@@ -8,6 +8,10 @@ type CompProps = {
 
 export const Favorites = ({ favoritesFilms }: CompProps) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
+  if (!favoritesFilms) {
+    return null;
+  }
+
   return (
     <div>
       <Button

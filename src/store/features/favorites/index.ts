@@ -1,8 +1,12 @@
-"use client"
+"use client";
 
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Film } from "@/types/types";
-import { loadFavoritesFromLocalStorage, removeMovieFromFavorites, saveMovieToFavorites } from "@/utils/localStorage";
+import {
+  loadFavoritesFromLocalStorage,
+  removeMovieFromFavorites,
+  saveMovieToFavorites,
+} from "@/utils/localStorage";
 
 type FavoritesFilms = {
   films: Film[];
@@ -12,8 +16,8 @@ let initialState: FavoritesFilms = {
   films: [],
 };
 
-if(typeof window !== "undefined") {     
-    initialState = {
+if (typeof window !== "undefined") {
+  initialState = {
     films: loadFavoritesFromLocalStorage(),
   };
 }
