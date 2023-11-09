@@ -3,6 +3,7 @@ import "./globals.css";
 import { StoreProvider } from "@/store/provider";
 import React from "react";
 import { ThemeWrapper } from "@/components/ThemeWrapper/component";
+import { Footer } from "@/components/Footer/component";
 
 export default function RootLayout({
   children,
@@ -22,6 +23,7 @@ export default function RootLayout({
             <StoreProvider>
               <Header />
               <main>{children}</main>
+              <Footer />
             </StoreProvider>
           </React.StrictMode>
         </body>

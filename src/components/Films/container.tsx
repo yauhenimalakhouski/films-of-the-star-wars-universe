@@ -82,7 +82,7 @@ export const FilmsContainer = () => {
           </Button>
         </div>
       </div>
-      <Films films={currentFilmsSorted} filmsViewType={filmsViewType}></Films>;
+      <Films films={currentFilmsSorted} filmsViewType={filmsViewType} />
     </Fragment>
   );
 };
