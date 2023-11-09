@@ -1,0 +1,111 @@
+.root {
+  margin: 0 12.5%;
+  background: var(--primiry-background-color);
+  color: var(--primiry-text-color);
+}
+
+.new_film_news_container {
+  margin: 0 20px;
+  padding-bottom: 50px;
+}
+
+.new_film_title {
+  margin-top: 0;
+  color: var(--text-highlight);
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.text_link {
+  color: var(--text-highlight);
+}
+
+.info {
+  width: 70%;
+  margin: 30px auto;
+  font-size: 24px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: solid 1px var(--table-border);
+}
+
+.td {
+  border: solid 1px var(--table-border);
+  padding: 0 20px;
+}
+
+.time_title {
+  border: none;
+}
+
+.time_left {
+  font-size: 30px;
+  color: var(--text-highlight);
+  height: 60px;
+  border: none;
+}
+
+.banner_container {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.banner {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.timer {
+}
+
+@media only all and (max-width: 1440px) {
+  .new_film_news {
+    margin: 0;
+  }
+}
+
+@media only all and (max-width: 1024px) {
+  .new_film_title {
+    font-size: 36px;
+  }
+
+  .info {
+    width: 90%;
+    font-size: 20px;
+  }
+
+  .timer {
+    font-size: 24px;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .new_film_title {
+    font-size: 30px;
+  }
+
+  .info {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .timer {
+    font-size: 20px;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .new_film_title {
+    font-size: 24px;
+  }
+
+  .info {
+    font-size: 16px;
+  }
+
+  .timer {
+    font-size: 16px;
+  }
+}

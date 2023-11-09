@@ -8,6 +8,7 @@ import {
   faSquareInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
+
 export const Footer = () => {
   return (
     <footer className={styles.root}>
@@ -16,27 +17,24 @@ export const Footer = () => {
         <span> 2023 ALL RIGHTS RESERVED</span>
       </div>
       <div className={styles.social_icon}>
-        <Link href="https://www.facebook.com" target="_blank">
+        <Link href="https://www.facebook.com" target="_blank" className={styles.link}>
           <FontAwesomeIcon
             icon={faFacebook}
-            beat
             style={{ color: "#454d5f" }}
           />
         </Link>
-        <Link href="https://vk.com" target="_blank">
+        <Link href="https://vk.com" target="_blank" className={styles.link}>
           <FontAwesomeIcon icon={faVk} beat style={{ color: "#454d5f" }} />
         </Link>
-        <Link href="https://twitter.com" target="_blank">
+        <Link href="https://twitter.com" target="_blank" className={styles.link}>
           <FontAwesomeIcon
             icon={faSquareTwitter}
-            beat
             style={{ color: "#454d5f" }}
           />
         </Link>
-        <Link href="https://www.instagram.com" target="_blank">
+        <Link href="https://www.instagram.com" target="_blank" className={styles.link}>
           <FontAwesomeIcon
             icon={faSquareInstagram}
-            beat
             style={{ color: "#454d5f" }}
           />
         </Link>
