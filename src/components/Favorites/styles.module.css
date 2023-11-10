@@ -1,0 +1,43 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  position: absolute;
+  top: 29px;
+  right: 20px;
+  z-index: 5;
+}
+
+.favorites_films {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favorite_film {
+  width: 95%;
+  min-height: 30px;
+  background-image: linear-gradient(90deg, #29004c, #5317ab, #644dd9, #0858b3);
+  border: solid 1px #01faff;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.film_link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+  font-size: 14px;
+  padding: 5px;
+}
+
+@media only all and (max-width: 425px) {
+  .root {
+    width: 110px;
+    font-size: 14px;
+    top: 21px;
+    right: 10px;
+  }
+}

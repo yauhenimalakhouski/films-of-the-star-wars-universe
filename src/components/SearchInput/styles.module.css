@@ -1,0 +1,43 @@
+.root {
+  margin: 0 10%;
+  width: 60%;
+}
+
+.input {
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 15px;
+  border: 0;
+  background: url("/icon_search.svg") rgb(165, 160, 160) no-repeat 98% 50%;
+  background-size: 20px;
+  padding: 0 30px 0 15px;
+}
+
+.input:focus {
+  color: black;
+  outline: none;
+  background: white;
+}
+
+@media only all and (max-width: 1024px) {
+  .root {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .root {
+    margin: 0 auto;
+    width: 70%;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .root {
+    margin: 0 10%;
+    width: 80%;
+  }
+}

@@ -23,7 +23,10 @@ export const Button = ({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={classNames(styles.root, className, {})}
+      className={classNames(styles.root, className, {
+        [styles.btn_theme]: type === "btn_theme",
+        [styles.btn_favorites]: type === "btn_favorites",
+      })}
     >
       {children}
     </button>

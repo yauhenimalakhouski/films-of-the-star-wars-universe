@@ -6,16 +6,25 @@ import { LocalizationButton } from "../LocalizationButton/component";
 import { SearchInput } from "../SearchInput/component";
 import { FavoritesContainer } from "../Favorites/container";
 
+import styles from "./styles.module.css";
+
 export const Header = () => {
   return (
-    <header>
+    <header className={styles.root}>
       <div>
         <Link href="/">
-          <Image src="icon.svg" width="75" height="75" alt="Logo" priority />
+          <Image
+            src="logo.svg"
+            width="75"
+            height="75"
+            alt="Logo"
+            priority
+            className={styles.logo_img}
+          />
         </Link>
       </div>
-      <SearchInput />
-      <div className="settings">
+      <SearchInput className = {styles.search_position}/>
+      <div className={styles.settings}>
         <ThemeButton />
         <LocalizationButton />
         <FavoritesContainer />

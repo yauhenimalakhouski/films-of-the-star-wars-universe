@@ -1,51 +1,51 @@
 .root {
-    width: 100px;
-    border: 1px solid #5b5b5b;
-    background-color: rgb(25, 88, 139);
-    border-radius: 10px;
-    color: var(--main-text-color);
-    padding: 4px 8px;
-    min-width: 25px;
-    border: none;
-    font-size: 16px;
-    text-align: center;
-    font-weight: bold;
-    transition: border-color 0.2s background-color 0.2s;
-    cursor: pointer;
+
+}
+
+.btn_theme {
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  appearance: none;
+  border-radius: 5px;
+  background: var(--color-scheme-icon) no-repeat 50% 50% rgb(0, 0, 0, 0.95);
+  background-size: 75%;
+  color: var(--primiry-text-color);
+  padding: 5px;
+  position: absolute;
+  top: 35px;
+  right: 230px;
+  box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
+  cursor: pointer;
+}
+
+.btn_theme:hover {
+  background-color: rgb(39, 37, 37);
+}
+
+.btn_favorites {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 auto 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(90deg, #29004c, #5317ab, #644dd9, #01faff);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@media only all and (max-width: 425px) {
+  .btn_theme {
+    top: 25px;
+    right: 200px;
   }
 
-  .btn_theme {
-    width: 30px;
-    height: 30px;
-    font-weight: bold;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 5px;
-    background-size: 75%;
-    padding: 5px;
-    -webkit-box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
-    box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
+  .btn_favorites {
+    padding: 5px 5px;
+    font-size: 12px;
   }
-  
-  .btn_theme {
-    width: 30px;
-    height: 30px;
-    font-weight: bold;
-    appearance: none;
-    border-radius: 5px;
-    background-size: 75%;
-    padding: 5px;
-  }
-  
-  .btn_theme.dark {
-    background: url("images/moon-active.svg") no-repeat 50% 50% azure;
-    color: azure;
-    outline: solid 1px violet;
-  }
-  
-  .btn_theme.light {
-    background: url("images/sun-active.svg") no-repeat 50% 50% rgb(0, 0, 0, 0.95);
-    color: rgba(8, 8, 8, 0.95);
-    outline: solid 1px azure;
-  }
+}

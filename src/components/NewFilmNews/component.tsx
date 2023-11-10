@@ -9,17 +9,16 @@ import { useState } from "react";
 
 const releaseTime: number = +new Date(2023, 11, 12);
 
-
 export const NewFilmNews = () => {
   const [time, setTime] = useState<number>(0);
 
   let intervalId = setInterval(() => {
-    setTime(releaseTime - Date.now())
+    setTime(releaseTime - Date.now());
   });
   if (time < 0) {
     clearInterval(intervalId);
   }
-  
+
   return (
     <div className={styles.root}>
       <div className={styles.new_film_news_container}>

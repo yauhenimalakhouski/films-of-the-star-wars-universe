@@ -29,10 +29,7 @@ export const ThemeButton = () => {
       <Button
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         type={`btn_theme`}
-        switchType={`${theme}`}
-      >
-        {theme}
-      </Button>
+      />
     </div>
   );
 };

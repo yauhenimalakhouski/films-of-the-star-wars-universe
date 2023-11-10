@@ -8,6 +8,8 @@ import {
 } from "@/utils/localStorage";
 import { saveLang } from "@/store/features/userSettings";
 
+import styles from "./styles.module.css";
+
 let savedLang;
 
 export const LocalizationButton = () => {
@@ -30,8 +32,9 @@ export const LocalizationButton = () => {
   }, [lang, dispatch]);
 
   return (
-    <div>
+    <div className={styles.root}>
       <select
+      className={styles.lang_select}
         value={lang}
         onChange={() => {
           setLang(lang === "ru" ? "en" : "ru");

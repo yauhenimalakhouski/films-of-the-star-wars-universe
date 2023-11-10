@@ -1,0 +1,51 @@
+.root {
+  display: flex;
+  position: absolute;
+  top: 35px;
+  right: 160px;
+  width: 60px;
+  height: 30px;
+  border-radius: 0.25em;
+  overflow: hidden;
+
+  box-shadow: 2px 2px 2px 1px rgba(245, 245, 245, 0.5);
+}
+
+.root::after {
+  content: "\25BC";
+  position: absolute;
+  top: 5px;
+  right: 0;
+  padding-right: 5px;
+  background-color: #473c8b;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+
+.root:hover::after {
+  color: #f39c12;
+}
+
+.lang_select {
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: #473c8b;
+  background-image: none;
+  cursor: pointer;
+}
+
+.lang_select::-ms-expand {
+  display: none;
+}
+
+@media only all and (max-width: 425px) {
+    .root {
+		top:25px;
+		right: 130px;
+	}
+}
