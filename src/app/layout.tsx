@@ -22,7 +22,7 @@ export default function RootLayout({
           <React.StrictMode>
             <StoreProvider>
               <Header />
-              <main>{children}</main>
+              <main className="main">{children}</main>
               <Footer />
             </StoreProvider>
           </React.StrictMode>

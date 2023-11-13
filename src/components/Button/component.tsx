@@ -30,6 +30,8 @@ export const Button = ({
         [styles.btn_tile_view]: type === "btn_tile_view",
         [styles.selected_table]: switchType === "selected_table",
         [styles.selected_tile]: switchType === "selected_tile",
+        [styles.btn_favorite]: type === "btn_favorite",
+        [styles.btn_favorite_active]: switchType === "active",
       })}
     >
       {children}
