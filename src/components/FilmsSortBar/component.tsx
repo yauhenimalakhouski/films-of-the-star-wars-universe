@@ -29,7 +29,7 @@ export const FilmsSortBar = () => {
   return (
     <div className={styles.root}>
       <span>Sort by:</span>
-      <div>
+      <div className={styles.select_container}>
         <select
           className={styles.sort_select}
           value={sortType}

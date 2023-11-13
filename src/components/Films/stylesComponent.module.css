@@ -2,20 +2,49 @@
 }
 
 .tile {
-	margin: 50px 20px 0;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 50px 75px;
-		padding-bottom: 50px;
+  margin: 50px 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px 75px;
+  padding-bottom: 50px;
 }
 
 .table {
   display: flex;
   width: 90%;
-          flex-direction: column;
+  flex-direction: column;
   gap: 50px;
   margin: 20px auto 0;
   padding-bottom: 50px;
 }
 
+@media only all and (max-width: 1024px) {
+  .tile {
+    grid-gap: 20px 15px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media only all and (max-width: 640px) {
+  .table {
+    width: auto;
+  }
+  .tile {
+    grid-gap: 20px 5px;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .tile {
+    grid-template-columns: 1fr;
+    margin: 30px 20px 0;
+    padding-bottom: 30px;
+  }
+  .table {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 30px 20px 0;
+    padding-bottom: 30px;
+    gap: 20px 0;
+  }
+}

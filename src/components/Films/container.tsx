@@ -62,7 +62,7 @@ export const FilmsContainer = () => {
     <Fragment>
       <div className={styles.root}>
         <FilmsSortBar />
-        <div>
+        <div className={styles.view_control}>
           <Button
             switchType={filmsViewType==="table"?"selected_table":""}
             type={`btn_table_view`}

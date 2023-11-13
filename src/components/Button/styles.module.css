@@ -83,6 +83,26 @@
   background-size: cover;
 }
 
+@media only all and (max-width: 1024px) {
+  .btn_favorite {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .btn_table_view {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .btn_tile_view {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 @media only all and (max-width: 425px) {
   .btn_theme {
     top: 25px;

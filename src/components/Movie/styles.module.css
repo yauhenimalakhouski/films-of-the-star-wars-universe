@@ -77,3 +77,28 @@
   padding-right: 10px;
   padding-bottom: 10px;
 }
+
+@media only all and (max-width: 1024px) {
+  .film_text {
+    display: none;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .episode_title,
+  .episode_number {
+    font-size: 16px;
+  }
+
+  .release_date,
+  .film_producer {
+    font-size: 14px;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .root {
+    display: block;
+    width: 100%;
+  }
+}

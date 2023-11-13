@@ -13,3 +13,26 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+@media only all and (max-width: 640px) {
+  .root {
+    font-size: 16px;
+  }
+
+  .sort_select {
+    height: 30px;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .root {
+    width: 100%;
+  }
+
+  .select_container{
+    width: 70%;
+  }
+  .sort_select{
+    width: 100%;
+  }
+}

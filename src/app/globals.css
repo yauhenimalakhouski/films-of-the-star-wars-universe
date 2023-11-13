@@ -54,3 +54,10 @@ body {
   background: var(--primiry-background-color);
   min-height: 95vh;
 }
+
+@media only all and (max-width: 1440px) {
+
+  .main {
+    margin: 0;
+  }
+}
