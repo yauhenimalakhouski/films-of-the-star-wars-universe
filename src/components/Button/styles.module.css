@@ -38,6 +38,32 @@
   cursor: pointer;
 }
 
+.btn_table_view {
+  width: 40px;
+  height: 40px;
+  background: url('/table_sort.png') no-repeat 50% 50%;
+  background-size: 100%;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_tile_view {
+  width: 40px;
+  height: 40px;
+  background: url('/tile_sort.png') no-repeat 50% 50%;
+  background-size: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.selected_table,
+.selected_tile {
+  outline: solid 2px rgb(19, 172, 172);
+  border-radius: 5px;
+}
+
+
 @media only all and (max-width: 425px) {
   .btn_theme {
     top: 25px;

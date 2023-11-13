@@ -1,3 +1,7 @@
-.root{
-    
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin: 0 20px;
 }
+

@@ -9,6 +9,8 @@ import {
 } from "@/utils/localStorage";
 import { useEffect, useState } from "react";
 
+import styles from "./styles.module.css";
+
 let savedSortType;
 
 export const FilmsSortBar = () => {
@@ -25,10 +27,11 @@ export const FilmsSortBar = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.root}>
       <span>Sort by:</span>
       <div>
         <select
+          className={styles.sort_select}
           value={sortType}
           onChange={(event) => {
             setSortType(event.currentTarget.value);

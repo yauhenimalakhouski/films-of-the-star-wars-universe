@@ -8,7 +8,7 @@ type AppProps = {
   disabled?: boolean;
   type?: string;
   switchType?: string;
-  className?: { [key: string]: string };
+  className?: { [key: string]: string};
 };
 
 export const Button = ({
@@ -26,6 +26,10 @@ export const Button = ({
       className={classNames(styles.root, className, {
         [styles.btn_theme]: type === "btn_theme",
         [styles.btn_favorites]: type === "btn_favorites",
+        [styles.btn_table_view]: type === "btn_table_view",
+        [styles.btn_tile_view]: type === "btn_tile_view",
+        [styles.selected_table]: switchType === "selected_table",
+        [styles.selected_tile]: switchType === "selected_tile",
       })}
     >
       {children}

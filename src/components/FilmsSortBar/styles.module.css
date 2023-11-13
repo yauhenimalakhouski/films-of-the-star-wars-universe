@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  font-size: 20px;
+  color: var(--primiry-text-color);
+  gap: 10px;
+  align-items: center;
+}
+
+.sort_select {
+  height: 40px;
+  color: azure;
+  background-color: rgb(34, 33, 33);
+  border-radius: 10px;
+  cursor: pointer;
+}

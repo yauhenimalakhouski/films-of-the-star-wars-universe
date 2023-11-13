@@ -9,8 +9,9 @@ import { Fragment, useEffect, useState } from "react";
 import { selectSortTypeValue } from "@/store/features/userSettings/selectors";
 import { Button } from "../Button/component";
 
-import styles from "./styles.module.css";
+import styles from "./stylesContainer.module.css";
 import { FilmsSortBar } from "../FilmsSortBar/component";
+import classNames from "classnames";
 
 const LOCAL_STORAGE_KEY: string = "filmViewType";
 let savedViewType;
@@ -59,27 +60,27 @@ export const FilmsContainer = () => {
 
   return (
     <Fragment>
-      <div>
+      <div className={styles.root}>
         <FilmsSortBar />
         <div>
           <Button
+            switchType={filmsViewType==="table"?"selected_table":""}
+            type={`btn_table_view`}
             onClick={() => {
               if (filmsViewType !== "table") {
                 setFilmsViewType("table");
               }
             }}
-          >
-            table
-          </Button>
+          />
           <Button
+          switchType={filmsViewType==="tile"?"selected_tile":""}
+            type={`btn_tile_view`}
             onClick={() => {
               if (filmsViewType !== "tile") {
                 setFilmsViewType("tile");
               }
             }}
-          >
-            tile
-          </Button>
+          />
         </div>
       </div>
       <Films films={currentFilmsSorted} filmsViewType={filmsViewType} />
