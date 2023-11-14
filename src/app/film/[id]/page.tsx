@@ -21,7 +21,7 @@ export default async function FilmPage({ params: { id } }: PageProps) {
       {/* <Movie film={film} filmsViewType={"table"}></Movie> */}
       <FilmPageDescription film={film}/>
       <FilmTrailer filmId={id} />
-      <FilmCharacters/>
+      <FilmCharacters filmId={id}/>
     </div>
   );
 }
