@@ -1,0 +1,19 @@
+.root {
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.film_cover_wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  grid-column: 1/2;
+}
+
+.film_cover {
+  object-fit: cover;
+  border-radius: 20px;
+}

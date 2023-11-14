@@ -1,5 +1,10 @@
+import { FilmPageDescription } from "@/components/FilmPageDescription/component";
 import { Movie } from "@/components/Movie/component";
 import { fetchFilm } from "@/services/api";
+
+import styles from "./styles.module.css";
+import { FilmTrailer } from "@/components/FilmTrailer/comonent";
+
 type PageProps = {
   params: { id: number };
 };
@@ -11,8 +16,10 @@ export default async function FilmPage({ params: { id } }: PageProps) {
   }
 
   return (
-    <div>
-      <Movie film={film} filmsViewType={"table"}></Movie>
+    <div className={styles.root}>  {/*film_wrapper*/}
+      {/* <Movie film={film} filmsViewType={"table"}></Movie> */}
+      <FilmPageDescription film={film}/>
+      <FilmTrailer filmId={id} />
     </div>
   );
 }
