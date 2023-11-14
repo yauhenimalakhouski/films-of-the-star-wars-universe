@@ -1,0 +1,11 @@
+.root{
+    
+}
+
+.btn_show_more_characters_show {
+    display: block;
+}
+
+.btn_show_more_characters_hide {
+    display: none;
+}

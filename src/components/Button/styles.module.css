@@ -83,6 +83,33 @@
   background-size: cover;
 }
 
+.btn_show_more_characters {
+  display: none;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  padding: 10px 30px;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #9eefe1 0%,
+    #4830f0 51%,
+    #9eefe1 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.btn_show_more_characters:hover {
+  background-position: right center;
+}
+
+
 @media only all and (max-width: 1024px) {
   .btn_favorite {
     width: 20px;
