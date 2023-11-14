@@ -1,6 +1,6 @@
 "use client";
 import { useGetCharactersQuery } from "@/store/services/api";
-import { Character, Film } from "@/types/types";
+import { Film } from "@/types/types";
 import { FilmCharacters } from "./component";
 
 type CompProps = {

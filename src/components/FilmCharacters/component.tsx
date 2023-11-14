@@ -4,18 +4,19 @@ import classNames from "classnames";
 import styles from "./styles.module.css";
 import { Button } from "../Button/component";
 import { useEffect, useState } from "react";
-import { Character} from "@/types/types";
+import { CharacterType} from "@/types/types";
+import { Character} from "../Character/component";
 
 type CompProps = {
-  characters: Character[];
+  characters: CharacterType[];
 };
 
 export const FilmCharacters = ({ characters }: CompProps) => {
-  const [filmCharacters, setFilmCharacters] = useState<Character[]>(
+  const [filmCharacters, setFilmCharacters] = useState<CharacterType[]>(
     characters.slice()
   );
   const [currentFilmCharacters, setCurrentFilmCharacters] = useState<
-    Character[]
+    CharacterType[]
   >([]);
   const [isBtnShown, setIsBtnShown] = useState<boolean>(true);
   const [charactersCount, setCharactersCount] = useState<number>(8);
@@ -40,7 +41,7 @@ export const FilmCharacters = ({ characters }: CompProps) => {
       </h3>
       <ol className={styles.characters}>
         {currentFilmCharacters.map((character) => (
-          <li key={character.id}>{character.name}</li>
+          <li key={character.id}><Character character={character}/></li>
         ))}
       </ol>
       <div className={styles.loader}>

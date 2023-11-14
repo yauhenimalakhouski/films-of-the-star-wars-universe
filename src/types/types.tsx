@@ -15,7 +15,7 @@ export type Film = {
   id: number;
 };
 
-export type Character = {
+export type CharacterType = {
   name:string;
   height:number;
   mass:number;

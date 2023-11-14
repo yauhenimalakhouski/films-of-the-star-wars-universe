@@ -1,4 +1,4 @@
-import { Character, Film } from "@/types/types";
+import { CharacterType, Film } from "@/types/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
@@ -12,7 +12,7 @@ export const api = createApi({
         url: "film/all.json",
       }),
     }),
-    getCharacters: builder.query<Character[], undefined>({
+    getCharacters: builder.query<CharacterType[], undefined>({
       query: () => ({
         url: "/people/all.json",
       }),
