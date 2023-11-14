@@ -4,7 +4,7 @@ import { fetchFilm } from "@/services/api";
 
 import styles from "./styles.module.css";
 import { FilmTrailer } from "@/components/FilmTrailer/comonent";
-import { FilmCharacters } from "@/components/FilmCharacters/component";
+import { FilmCharactersContainer } from "@/components/FilmCharacters/container";
 
 type PageProps = {
   params: { id: number };
@@ -21,7 +21,7 @@ export default async function FilmPage({ params: { id } }: PageProps) {
       {/* <Movie film={film} filmsViewType={"table"}></Movie> */}
       <FilmPageDescription film={film}/>
       <FilmTrailer filmId={id} />
-      <FilmCharacters filmId={id}/>
+      <FilmCharactersContainer film={film}/>
     </div>
   );
 }

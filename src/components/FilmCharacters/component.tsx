@@ -3,31 +3,46 @@
 import classNames from "classnames";
 import styles from "./styles.module.css";
 import { Button } from "../Button/component";
-import { useState } from "react";
-import { useGetCharactersQuery } from "@/store/services/api";
+import { useEffect, useState } from "react";
+import { Character} from "@/types/types";
 
 type CompProps = {
-    filmId:number;
-}
+  characters: Character[];
+};
 
-
-export const FilmCharacters = ({filmId}:CompProps) => {
-  const { data: characters, isFetching, isSuccess } = useGetCharactersQuery(undefined);
-
+export const FilmCharacters = ({ characters }: CompProps) => {
+  const [filmCharacters, setFilmCharacters] = useState<Character[]>(
+    characters.slice()
+  );
+  const [currentFilmCharacters, setCurrentFilmCharacters] = useState<
+    Character[]
+  >([]);
   const [isBtnShown, setIsBtnShown] = useState<boolean>(true);
-  if(!characters){
-    return null;
-  }
+  const [charactersCount, setCharactersCount] = useState<number>(8);
 
-  let currentFilmCharacters = characters.slice();
-  
+  useEffect(() => {
+    if (filmCharacters.length >= 8) {
+      setCurrentFilmCharacters(
+        currentFilmCharacters.concat(...filmCharacters.slice(0, 8))
+      );
+    } else {
+      setCurrentFilmCharacters(
+        currentFilmCharacters.concat(...filmCharacters.slice(0))
+      );
+      setIsBtnShown(false);
+    }
+  }, [charactersCount]);
 
   return (
     <div className={styles.root}>
       <h3 className={styles.main_characters_title}>
         <span>Main characters</span>
       </h3>
-      <ol className={styles.characters}>{currentFilmCharacters.map((character)=><li>{character.name}</li>)}</ol>
+      <ol className={styles.characters}>
+        {currentFilmCharacters.map((character) => (
+          <li key={character.id}>{character.name}</li>
+        ))}
+      </ol>
       <div className={styles.loader}>
         <div className={classNames(styles.inner, styles.one)} />
         <div className={classNames(styles.inner, styles.two)} />
@@ -41,7 +56,8 @@ export const FilmCharacters = ({filmId}:CompProps) => {
             : styles.btn_show_more_characters_hide
         }
         onClick={() => {
-          setIsBtnShown(false);
+          setFilmCharacters(filmCharacters.splice(8));
+          setCharactersCount(charactersCount + 8);
         }}
       >
         Show more characters

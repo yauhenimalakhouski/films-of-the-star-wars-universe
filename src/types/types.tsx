@@ -37,5 +37,5 @@ export type Character = {
   bornLocation?: string;
   died?: string;
   diedLocation?: string;
-  id: number;
+  id: string;
 }
