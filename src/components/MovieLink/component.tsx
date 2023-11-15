@@ -12,7 +12,7 @@ type CompProps = {
 export const MovieLink = ({ movie }: CompProps) => {
   return (
     <div className={styles.root}> {/*film*/}
-      <Link href={`/film/${movie.id}`}>
+      <Link href={`/film/${movie.id}`} className={styles.link}>
         <div className={styles.film_img_wrapper}>
           <Image
             fill={true}

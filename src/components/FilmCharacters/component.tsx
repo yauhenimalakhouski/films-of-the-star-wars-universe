@@ -41,7 +41,7 @@ export const FilmCharacters = ({ characters }: CompProps) => {
       </h3>
       <ol className={styles.characters}>
         {currentFilmCharacters.map((character) => (
-          <li key={character.id}><Character character={character}/></li>
+          <li key={character.id} className={styles.character}><Character character={character}/></li>
         ))}
       </ol>
       <Button

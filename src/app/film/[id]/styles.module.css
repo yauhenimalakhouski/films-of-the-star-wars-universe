@@ -1,3 +1,7 @@
-.root{
-    
+.root {
+  margin: 0 auto;
+  width: 95%;
+  color: var(--primiry-text-color);
+  font-size: 20px;
+  padding: 50px 0;
 }

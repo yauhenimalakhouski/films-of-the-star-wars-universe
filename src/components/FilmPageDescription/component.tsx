@@ -30,7 +30,7 @@ export const FilmPageDescription = ({ film }: CompProps) => {
       <div className={styles.description}>
         <div className={styles.episode_number}>{`Episode ${film.episode_id}`}</div>
         <div className={styles.episode_title}>{film.title}</div>
-        <h2>About film</h2>
+        <h2 className={styles.title}>About film</h2>
         <ul className={styles.about_film}>
           <li className={styles.release_date}>
             <span>Year of production</span>

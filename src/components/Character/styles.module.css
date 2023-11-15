@@ -1,14 +1,46 @@
-.root{
-    
+.link {
+  padding: 15px 0;
+  width: 100%;
+  text-decoration: none;
+  color: var(--primiry-text-color);
+  display: flex;
+  flex: 0 1 auto;
+  margin-right: 10px;
+  gap: 10px;
+  font-size: 14px;
 }
 
-.image_wrapper{
-    position: relative;
-    width: 40%;
-    aspect-ratio: 3/4;
+.image_wrapper {
+  vertical-align: top;
+  padding-left: 5px;
+  position: relative;
+  width: 70%;
+  aspect-ratio: 3/4;
 }
 
-.character_photo{
-	border-radius: 20px;
-    object-fit: cover;
+.character_photo {
+  object-fit: cover;
+}
+
+.character_description {
+  width: 100%;
+}
+
+.character_description div {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.homeworld span:first-child,
+.born span:first-child,
+.species span:first-child {
+  color: rgb(134, 130, 130);
 }

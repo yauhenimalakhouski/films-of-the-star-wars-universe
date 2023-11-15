@@ -19,7 +19,6 @@ export default async function FilmPage({ params: { id } }: PageProps) {
 
   return (
     <div className={styles.root}>  {/*film_wrapper*/}
-      {/* <Movie film={film} filmsViewType={"table"}></Movie> */}
       <FilmPageDescription film={film}/>
       <FilmTrailer filmId={id} />
       <FilmCharactersContainer film={film}/>
