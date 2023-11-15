@@ -1,0 +1,15 @@
+.root{
+
+}
+
+.film_img_wrapper{
+    position: relative;
+    margin: 0 auto;
+		width: 100%;
+        aspect-ratio: 2/3;
+}
+
+.film_img{
+    object-fit: cover;
+    border-radius: 10px;
+}

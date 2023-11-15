@@ -1,4 +1,6 @@
 import { Film } from "@/types/types";
+import styles from "./styles.module.css";
+import { MovieLink } from "../MovieLink/component";
 
 type CompProps = {
   recommendedMovies: Film[];
@@ -6,10 +8,15 @@ type CompProps = {
 
 export const RecommendedMovies = ({ recommendedMovies }: CompProps) => {
   return (
-    <div>
-      {recommendedMovies.map((movie) => (
-        <div key={movie.id}>{movie.title}</div>
-      ))}
+    <div className={styles.root}>
+      {" "}
+      {/*more-films-wrapper*/}
+      <h3>If you liked this movie:</h3>
+      <div className={styles.more_films}>
+        {recommendedMovies.map((movie) => (
+          <MovieLink key={movie.id} movie={movie} />
+        ))}
+      </div>
     </div>
   );
 };
