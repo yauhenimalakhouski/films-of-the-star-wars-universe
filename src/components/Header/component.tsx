@@ -15,8 +15,8 @@ export const Header = () => {
         <Link href="/">
           <Image
             src="logo.svg"
-            width="75"
-            height="75"
+            width={75}
+            height={75}
             alt="Logo"
             priority
             className={styles.logo_img}
