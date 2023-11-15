@@ -13,6 +13,12 @@ module.exports = {
           port: '',
           pathname: '/starwars/**',
         },
+        {
+          protocol: 'https',
+          hostname: 'vignette.wikia.nocookie.net',
+          port: '',
+          pathname: '/fr.starwars/**',
+        },
       ],
     },
   }

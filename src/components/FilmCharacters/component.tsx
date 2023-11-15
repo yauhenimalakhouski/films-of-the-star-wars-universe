@@ -44,11 +44,6 @@ export const FilmCharacters = ({ characters }: CompProps) => {
           <li key={character.id}><Character character={character}/></li>
         ))}
       </ol>
-      <div className={styles.loader}>
-        <div className={classNames(styles.inner, styles.one)} />
-        <div className={classNames(styles.inner, styles.two)} />
-        <div className={classNames(styles.inner, styles.three)} />
-      </div>
       <Button
         type={`btn_show_more_characters`}
         className={

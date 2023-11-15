@@ -1,3 +1,14 @@
 .root{
     
 }
+
+.image_wrapper{
+    position: relative;
+    width: 40%;
+    aspect-ratio: 3/4;
+}
+
+.character_photo{
+	border-radius: 20px;
+    object-fit: cover;
+}

@@ -10,7 +10,7 @@ export const FilmTrailer = ({ filmId }: CompProps) => {
     <div className={styles.root}>
       <iframe
         className={styles.trailer}
-        src={FILMS_TRAILER_URLS[filmId-1]}
+        src={FILMS_TRAILER_URLS[+filmId-1]}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

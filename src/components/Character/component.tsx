@@ -10,7 +10,7 @@ type CompProps = {
 export const Character = ({ character }: CompProps) => {
   return (
     <>
-      <Link href={`/film/${character.id}`}>
+      <Link href={`/character/${character.id}`}>
         <div className={styles.image_wrapper}>
           <Image
             priority

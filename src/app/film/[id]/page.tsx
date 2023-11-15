@@ -5,6 +5,7 @@ import { fetchFilm } from "@/services/api";
 import styles from "./styles.module.css";
 import { FilmTrailer } from "@/components/FilmTrailer/comonent";
 import { FilmCharactersContainer } from "@/components/FilmCharacters/container";
+import { RecommendedMoviesContainer } from "@/components/RecommendedMovies/container";
 
 type PageProps = {
   params: { id: number };
@@ -22,6 +23,7 @@ export default async function FilmPage({ params: { id } }: PageProps) {
       <FilmPageDescription film={film}/>
       <FilmTrailer filmId={id} />
       <FilmCharactersContainer film={film}/>
+      <RecommendedMoviesContainer episodeId={film.episode_id}/>
     </div>
   );
 }
