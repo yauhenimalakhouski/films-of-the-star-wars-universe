@@ -1,0 +1,74 @@
+/* character-wrapper */
+.root {
+  display: flex;
+  gap: 50px;
+  margin: 0 auto;
+  width: 80%;
+  color: var(--primiry-text-color);
+  font-size: 20px;
+  padding: 50px 0 30px;
+}
+
+.image_wrapper {
+  position: relative;
+  width: 40%;
+  aspect-ratio: 3/4;
+}
+
+.character_photo {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.character_info {
+  width: 60%;
+}
+
+.character_name {
+  margin: 0 0 20px;
+  font-weight: bold;
+  color: var(--text-highlight);
+}
+
+.character_title {
+  color: #5043af;
+  margin: 25px 0;
+}
+
+.list {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  line-height: 1em;
+  margin-bottom: 10px;
+}
+
+.list span:first-child:not(.wiki) {
+  color: rgb(134, 130, 130);
+}
+
+.link {
+  margin-top: 30px;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #075a94;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
+.item__dotted {
+  border-bottom: 0.5px dashed var(--primiry-text-color);
+  flex-grow: 1;
+}
+
+.wiki {
+  text-transform: uppercase;
+}

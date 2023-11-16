@@ -14,7 +14,7 @@ export const Header = () => {
       <div>
         <Link href="/">
           <Image
-            src="logo.svg"
+            src="/logo.svg"
             width={75}
             height={75}
             alt="Logo"
