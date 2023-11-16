@@ -3,15 +3,22 @@
 
 .more_films {
   margin: 30px auto 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  padding-bottom: 50px;
+}
+
+
+@media only all and (max-width: 640px) {
+  .more_films {
+    width: 70%;
+    grid-template-columns: 2fr;
+  }
 }
 
 @media only all and (max-width: 425px) {
-  .more-films {
-    justify-content: center;
+  .more_films {
+    grid-template-columns: 1fr;
   }
 }

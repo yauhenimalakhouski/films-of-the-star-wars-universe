@@ -1,3 +1,4 @@
+import { CharacterMoviesContainer } from "@/components/CharacterMovies/container";
 import { CharacterPageDescription } from "@/components/CharacterPageDescription/component";
 import { fetchCharacter } from "@/services/api";
 
@@ -13,6 +14,7 @@ export default async function ChracterPage({ params: { id } }: PageProps) {
   return (
     <>
       <CharacterPageDescription character={character} />
+      <CharacterMoviesContainer character={character} />
     </>
   );
 }

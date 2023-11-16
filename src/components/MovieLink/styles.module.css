@@ -1,5 +1,5 @@
 .root {
-  width: 25%;
+  width: 100%;
 }
 
 .link {
@@ -20,9 +20,9 @@
   border-radius: 10px;
 }
 
-@media only all and (max-width: 1024px) {
+/* @media only all and (max-width: 1024px) {
   .root {
-    width: 40%;
+    width: 10%;
   }
 }
 
@@ -30,4 +30,4 @@
   .root {
     width: 90%;
   }
-}
+} */
