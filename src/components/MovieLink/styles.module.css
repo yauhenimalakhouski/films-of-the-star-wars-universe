@@ -19,3 +19,15 @@
   object-fit: cover;
   border-radius: 10px;
 }
+
+@media only all and (max-width: 1024px) {
+  .root {
+    width: 40%;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .root {
+    width: 90%;
+  }
+}

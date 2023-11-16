@@ -59,3 +59,41 @@
   font-size: 22px;
   line-height: 1.5;
 }
+
+@media only all and (max-width: 1024px) {
+  .episode_number,
+  .episode_title {
+    font-size: 20px;
+  }
+
+  .film_text {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .episode_number,
+  .episode_title {
+    font-size: 18px;
+  }
+  .film_text {
+    font-size: 16px;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
+
+  .description {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .film_text {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}

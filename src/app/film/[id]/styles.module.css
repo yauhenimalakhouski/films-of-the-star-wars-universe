@@ -5,3 +5,15 @@
   font-size: 20px;
   padding: 50px 0;
 }
+
+@media only all and (max-width: 1024px) {
+  .root {
+    font-size: 18px;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .root {
+    font-size: 16px;
+  }
+}

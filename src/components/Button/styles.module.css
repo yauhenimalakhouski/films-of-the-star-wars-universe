@@ -109,7 +109,6 @@
   background-position: right center;
 }
 
-
 @media only all and (max-width: 1024px) {
   .btn_favorite {
     width: 20px;
@@ -139,5 +138,9 @@
   .btn_favorites {
     padding: 5px 5px;
     font-size: 12px;
+  }
+
+  .btn_show_more_characters {
+    padding: 10px 10px;
   }
 }

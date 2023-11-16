@@ -1,4 +1,3 @@
-// import React from 'react';
 import { FILMS_TRAILER_URLS } from "@/consts/filmTrailerUrls";
 import styles from "./styles.module.css";
 type CompProps = {

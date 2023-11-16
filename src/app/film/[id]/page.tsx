@@ -1,5 +1,4 @@
 import { FilmPageDescription } from "@/components/FilmPageDescription/component";
-import { Movie } from "@/components/Movie/component";
 import { fetchFilm } from "@/services/api";
 
 import styles from "./styles.module.css";
@@ -18,7 +17,7 @@ export default async function FilmPage({ params: { id } }: PageProps) {
   }
 
   return (
-    <div className={styles.root}>  {/*film_wrapper*/}
+    <div className={styles.root}>
       <FilmPageDescription film={film}/>
       <FilmTrailer filmId={id} />
       <FilmCharactersContainer film={film}/>

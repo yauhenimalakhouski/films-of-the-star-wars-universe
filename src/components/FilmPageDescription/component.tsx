@@ -17,7 +17,6 @@ export const FilmPageDescription = ({ film }: CompProps) => {
 
   return (
     <div className={styles.root}>
-      {/*main_info*/}
       <div className={styles.film_cover_wrapper}>
         <Image
           className={styles.film_cover}

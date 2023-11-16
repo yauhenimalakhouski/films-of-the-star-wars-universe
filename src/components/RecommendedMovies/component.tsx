@@ -9,8 +9,6 @@ type CompProps = {
 export const RecommendedMovies = ({ recommendedMovies }: CompProps) => {
   return (
     <div className={styles.root}>
-      {" "}
-      {/*more-films-wrapper*/}
       <h3>If you liked this movie:</h3>
       <div className={styles.more_films}>
         {recommendedMovies.map((movie) => (

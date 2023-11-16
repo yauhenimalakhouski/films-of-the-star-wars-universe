@@ -8,3 +8,23 @@
   width: 708px;
   height: 425px;
 }
+
+@media only all and (max-width: 1024px) {
+  .trailer {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .trailer {
+    width: 417px;
+    height: 250px;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .trailer {
+    display: none;
+  }
+}
