@@ -24,7 +24,7 @@ export const NewFilmNews = () => {
       <div className={styles.new_film_news_container}>
         <h1 className={styles.new_film_title}>Coming soon on screens:</h1>
         <h1 className={styles.new_film_title}>
-          <Link href="/" title="Mandalorian" className={styles.text_link}>
+          <Link href="/new-film-info" title="Mandalorian" className={styles.text_link}>
             Mandalorian season 4
           </Link>
         </h1>
@@ -71,7 +71,7 @@ export const NewFilmNews = () => {
             </tr>
           </tbody>
         </table>
-        <Link href="/" title="Mandalorian" className={styles.banner_container}>
+        <Link href="/new-film-info" title="Mandalorian" className={styles.banner_container}>
           <Image
             src="/Poster2.png"
             priority
