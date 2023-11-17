@@ -5,19 +5,25 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import classNames from "classnames";
 import moment from "moment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const releaseTime: number = +new Date(2024, 10, 12);
 
 export const NewFilmNews = () => {
   const [time, setTime] = useState<number>(0);
 
-  let intervalId = setInterval(() => {
-    setTime(releaseTime - Date.now());
-  });
-  if (time < 0) {
-    clearInterval(intervalId);
-  }
+  useEffect(()=>{
+    let intervalId = setInterval(() => {
+      setTime(releaseTime - Date.now());
+    });
+    if (time < 0) {
+      clearInterval(intervalId);
+    }
+
+    return () => {
+      clearInterval(intervalId);
+    }
+  }, []);
 
   return (
     <div className={styles.root}>

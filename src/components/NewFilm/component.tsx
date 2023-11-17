@@ -1,8 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { useEffect, useState } from "react";
+import moment from "moment";
+
+const releaseTime: number = +new Date(2024, 10, 12);
 
 export const NewFilm = () => {
+    const [time, setTime] = useState<number>(0);
+
+    useEffect(()=>{
+      let intervalId = setInterval(() => {
+        setTime(releaseTime - Date.now());
+      });
+      if (time < 0) {
+        clearInterval(intervalId);
+      }
+      return () => {
+        clearInterval(intervalId);
+      }
+    }, []);
+  
+
   return (
     <div className={styles.root}>
       <h1 className={styles.new_film_title} data-lang-key="mandalorian-season">
@@ -38,13 +59,21 @@ export const NewFilm = () => {
               className={classNames(styles.time_left, styles.timer)}
             >
               <span data-lang-key="days-left">Days:</span>
-              <span className={styles.days_left}></span>
+              <span className={styles.days_left}>{`${moment(time).format(
+                "DDD"
+              )},`}</span>
               <span data-lang-key="hours-left">Hours:</span>
-              <span className={styles.hours_left}></span>
+              <span className={styles.hours_left}>{` ${moment(time).format(
+                "HH"
+              )}, `}</span>
               <span data-lang-key="minutes-left">Minutes:</span>
-              <span className={styles.minutes_left}></span>
+              <span className={styles.minutes_left}>{` ${moment(time).format(
+                "mm"
+              )}, `}</span>
               <span data-lang-key="seconds-left">Seconds:</span>
-              <span className={styles.seconds_left}></span>
+              <span className={styles.seconds_left}>{` ${moment(time).format(
+                "ss"
+              )}`}</span>
             </td>
           </tr>
           <tr>
@@ -83,7 +112,10 @@ export const NewFilm = () => {
           </tr>
         </tbody>
       </table>
-      <p data-lang-key="text-mandalorian-paragraph1">
+      <p
+        data-lang-key="text-mandalorian-paragraph1"
+        className={styles.paragraph}
+      >
         The Star Wars universe is developing rapidly. The success of the
         Mandalorian series allowed Disney+ to announce a lot more projects, and
         in the meantime, viewers are looking forward to the continuation of the
@@ -95,7 +127,10 @@ export const NewFilm = () => {
         told in their social networks that the project has received a fourth
         season.
       </p>
-      <p data-lang-key="text-mandalorian-paragraph2">
+      <p
+        data-lang-key="text-mandalorian-paragraph2"
+        className={styles.paragraph}
+      >
         Immediately after the end of the second season, Disney presented
         information about the new show of the Star Wars universe. Many people
         thought that this was the announcement of the third season, but later
@@ -114,10 +149,12 @@ export const NewFilm = () => {
           className={styles.image}
         />
       </div>
-      <h2 data-lang-key="plot">The plot of the film</h2>
+      <h2 data-lang-key="plot" className={styles.secondary_title}>
+        The plot of the film
+      </h2>
       <p
         data-lang-key="text-mandalorian-paragraph3"
-        className={styles.last_paragraph}
+        className={classNames(styles.last_paragraph, styles.paragraph)}
       >
         The fourth season of the Mandalorian will be a direct continuation of
         the third. While it is difficult to assume that it will be shown,
