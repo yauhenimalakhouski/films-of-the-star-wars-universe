@@ -23,7 +23,7 @@ export const NewFilmNews = () => {
     return () => {
       clearInterval(intervalId);
     }
-  }, []);
+  }, [time]);
 
   return (
     <div className={styles.root}>
