@@ -31,3 +31,9 @@
     width: 90%;
   }
 } */
+
+@media only all and (max-width: 640px) {
+  .link {
+    font-size: 18px;
+  }
+}

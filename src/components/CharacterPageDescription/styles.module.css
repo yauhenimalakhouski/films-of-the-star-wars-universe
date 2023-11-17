@@ -1,4 +1,3 @@
-/* character-wrapper */
 .root {
   display: flex;
   gap: 50px;
@@ -71,4 +70,63 @@
 
 .wiki {
   text-transform: uppercase;
+}
+
+@media only all and (max-width: 1024px) {
+  .root {
+    gap: 20px;
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .character_title {
+    font-size: 26px;
+  }
+
+  .link {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .root {
+    font-size: 16px;
+    width: 90%;
+  }
+  .character_name {
+    font-size: 26px;
+  }
+
+  .character_title {
+    font-size: 22px;
+  }
+
+  .link {
+    font-size: 18px;
+  }
+}
+
+@media only all and (max-width: 425px) {
+  .root {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 90%;
+    font-size: 16px;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .image_wrapper {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .character_info {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 90%;
+  }
 }

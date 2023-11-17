@@ -7,7 +7,7 @@ import classNames from "classnames";
 import moment from "moment";
 import { useState } from "react";
 
-const releaseTime: number = +new Date(2023, 11, 12);
+const releaseTime: number = +new Date(2024, 10, 12);
 
 export const NewFilmNews = () => {
   const [time, setTime] = useState<number>(0);
@@ -32,7 +32,7 @@ export const NewFilmNews = () => {
           <tbody>
             <tr className={styles.new_film_date}>
               <td className={styles.td}>When will it be released:</td>
-              <td className={styles.td}>December 12, 2023</td>
+              <td className={styles.td}>November 10, 2024</td>
             </tr>
             <tr>
               <td
