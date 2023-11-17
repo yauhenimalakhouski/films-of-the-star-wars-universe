@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { saveSearchString } from "@/store/features/searchFilms";
 import { useAppDispatch, useAppSelector } from "@/store/reduxHooks/reduxHooks";
@@ -7,15 +7,25 @@ import { selectSearchFilmsValue } from "@/store/features/searchFilms/selector";
 
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { usePathname } from "next/navigation";
 
 export const SearchInput = ({ className }: { [key: string]: string }) => {
   const searchTextFromStore = useAppSelector(selectSearchFilmsValue);
   const [searchText, setSearchText] = useState(searchTextFromStore);
   const dispatch = useAppDispatch();
 
+  const pathname = usePathname();
+  useEffect(() => {
+    if (pathname !== "/") {
+      setSearchText("");
+      dispatch(saveSearchString(""));
+    }
+  });
+
   return (
     <div className={classNames(className, styles.root)}>
       <input
+        disabled={pathname !== "/"}
         className={styles.input}
         value={searchText || ""}
         onChange={(event) => {
