@@ -40,7 +40,7 @@ export const NewFilm = () => {
           fill={true}
           alt="Poster"
           className={styles.image}
-        />
+        /> 
       </div>
       <table className={styles.info}>
         <tbody>

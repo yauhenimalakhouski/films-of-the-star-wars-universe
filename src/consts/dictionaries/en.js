@@ -1,4 +1,4 @@
-export const EN = {
+export const EN = { 
   sort: "Sort by:",
   button_favorites: "Favorites films",
   sort_from_first: "From the first episode",
@@ -8,7 +8,7 @@ export const EN = {
   coming_soon: "Coming soon on screens:",
   mandalorian_season: "Mandalorian season 4",
   when_released: "When will it be released:",
-  release_date: "December 12, 2023",
+  release_date: "November 12, 2024",
   until_release: "Until the release remains:",
   original_name: "Original name:",
   mandalorian: "The mandalorian",

@@ -8,8 +8,10 @@ import { selectSearchFilmsValue } from "@/store/features/searchFilms/selector";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
+import { selectLang } from "@/store/features/userSettings/selectors";
 
 export const SearchInput = ({ className }: { [key: string]: string }) => {
+  const lang = useAppSelector(selectLang);
   const searchTextFromStore = useAppSelector(selectSearchFilmsValue);
   const [searchText, setSearchText] = useState(searchTextFromStore);
   const dispatch = useAppDispatch();
@@ -20,7 +22,7 @@ export const SearchInput = ({ className }: { [key: string]: string }) => {
       setSearchText("");
       dispatch(saveSearchString(""));
     }
-  });
+  }, [pathname]);
 
   return (
     <div className={classNames(className, styles.root)}>

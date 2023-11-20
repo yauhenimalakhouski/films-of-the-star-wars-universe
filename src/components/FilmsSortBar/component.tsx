@@ -10,6 +10,8 @@ import {
 import { useEffect, useState } from "react";
 
 import styles from "./styles.module.css";
+import { RU } from "@/consts/dictionaries/ru";
+import { EN } from "@/consts/dictionaries/en";
 
 let savedSortType;
 
@@ -28,7 +30,7 @@ export const FilmsSortBar = () => {
 
   return (
     <div className={styles.root}>
-      <span>Sort by:</span>
+      <span>{lang === "en" ? EN.sort : RU.sort}</span>
       <div className={styles.select_container}>
         <select
           className={styles.sort_select}

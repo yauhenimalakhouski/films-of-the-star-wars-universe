@@ -8,7 +8,7 @@ export const RU = {
   coming_soon: "Скоро на экранах:",
   mandalorian_season: "Мандалорец 4 сезон",
   when_released: "Когда выйдет:",
-  release_date: "12 декабря 2023",
+  release_date: "12 ноябрь 2024",
   until_release: "До выхода осталось:",
   original_name: "Оригинальное название:",
   mandalorian: "Мандалорец",
