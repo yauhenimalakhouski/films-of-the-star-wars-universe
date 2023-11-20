@@ -5,12 +5,17 @@ import { Button } from "../Button/component";
 import { useEffect, useState } from "react";
 import { CharacterType} from "@/types/types";
 import { Character} from "../Character/component";
+import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
+import { selectLang } from "@/store/features/userSettings/selectors";
+import { EN } from "@/consts/dictionaries/en";
+import { RU } from "@/consts/dictionaries/ru";
 
 type CompProps = {
   characters: CharacterType[];
 };
 
 export const FilmCharacters = ({ characters }: CompProps) => {
+  const lang = useAppSelector(selectLang);
   const [filmCharacters, setFilmCharacters] = useState<CharacterType[]>(
     characters.slice()
   );
@@ -36,7 +41,7 @@ export const FilmCharacters = ({ characters }: CompProps) => {
   return (
     <div className={styles.root}>
       <h3 className={styles.main_characters_title}>
-        <span>Main characters</span>
+        <span>{lang === "en" ? EN.main_characters : RU.main_characters}</span>
       </h3>
       <ol className={styles.characters}>
         {currentFilmCharacters.map((character) => (
@@ -55,7 +60,7 @@ export const FilmCharacters = ({ characters }: CompProps) => {
           setCharactersCount(charactersCount + 8);
         }}
       >
-        Show more characters
+        {lang === "en" ? EN.show_characters : RU.show_characters}
       </Button>
     </div>
   );

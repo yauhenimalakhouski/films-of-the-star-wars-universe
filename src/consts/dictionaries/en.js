@@ -65,5 +65,5 @@ export const EN = {
   eye_color: "Eye color",
   skin_color: "Skin color",
   more_information: "More information",
-  film_participation: "Films with the participation of",
+  film_participation: "Films with the participation of ",
 };

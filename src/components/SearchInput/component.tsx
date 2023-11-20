@@ -34,7 +34,11 @@ export const SearchInput = ({ className }: { [key: string]: string }) => {
           setSearchText(event.target.value);
           dispatch(saveSearchString(event.target.value));
         }}
-        placeholder="Search by Episode Number, Episode Title"
+        placeholder={
+          lang === "en"
+            ? "Search by Episode Number, Episode Title"
+            : "Поиск по номеру эпизода, названию эпизода"
+        }
       />
     </div>
   );

@@ -4,13 +4,15 @@ import { StoreProvider } from "@/store/provider";
 import React from "react";
 import { ThemeWrapper } from "@/components/ThemeWrapper/component";
 import { Footer } from "@/components/Footer/component";
+import { LanguageLoader } from "@/components/LanguageLoader/component";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
+  return (<>
+    
     <ThemeWrapper>
       <html lang="en">
         <head>
@@ -21,6 +23,7 @@ export default function RootLayout({
         <body>
           <React.StrictMode>
             <StoreProvider>
+              <LanguageLoader />
               <Header />
               <main className="main">{children}</main>
               <Footer />
@@ -29,5 +32,6 @@ export default function RootLayout({
         </body>
       </html>
     </ThemeWrapper>
+    </>
   );
 }

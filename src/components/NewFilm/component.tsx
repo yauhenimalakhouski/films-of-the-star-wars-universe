@@ -13,8 +13,9 @@ import { RU } from "@/consts/dictionaries/ru";
 const releaseTime: number = +new Date(2024, 10, 12);
 
 export const NewFilm = () => {
-  const lang = useAppSelector(selectLang);
+  
   const [time, setTime] = useState<number>(0);
+  const lang = useAppSelector(selectLang);
 
   useEffect(() => {
     let intervalId = setInterval(() => {

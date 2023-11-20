@@ -1,18 +1,24 @@
+"use client";
+
 import { Film } from "@/types/types";
 import Image from "next/image";
 import moment from "moment";
 import styles from "./styles.module.css";
 import { FILMS_IMG } from "@/consts/filmsImg";
+import { RU } from "@/consts/dictionaries/ru";
+import { EN } from "@/consts/dictionaries/en";
+import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
+import { selectLang } from "@/store/features/userSettings/selectors";
 
 type CompProps = {
   film: Film;
 };
 
 export const FilmPageDescription = ({ film }: CompProps) => {
+  const lang = useAppSelector(selectLang);
   if (!film) {
     return null;
   }
-
   const release = moment(`${film.release_date}`).format("YYYY MMMM Do");
 
   return (
@@ -29,30 +35,30 @@ export const FilmPageDescription = ({ film }: CompProps) => {
       <div className={styles.description}>
         <div className={styles.episode_number}>{`Episode ${film.episode_id}`}</div>
         <div className={styles.episode_title}>{film.title}</div>
-        <h2 className={styles.title}>About film</h2>
+        <h2 className={styles.title}>{lang === "en" ? EN.about_film : RU.about_film}</h2>
         <ul className={styles.about_film}>
           <li className={styles.release_date}>
-            <span>Year of production</span>
+            <span>{lang === "en" ? EN.year_release : RU.year_release}</span>
             <span> {release}</span>
           </li>
           <li className={styles.country}>
-            <span>Country</span>
-            <span>USA</span>
+            <span>{lang === "en" ? EN.country : RU.country}</span>
+            <span>{lang === "en" ? EN.usa : RU.usa}</span>
           </li>
           <li className={styles.genre}>
-            <span>Genre</span>
-            <span>фантастика, фэнтези, боевик, приключения</span>
+            <span>{lang === "en" ? EN.genre : RU.genre}</span>
+            <span>{lang === "en" ? EN.genre_info : RU.genre_info}</span>
           </li>
           <li className={styles.director}>
-            <span>Director</span>
+            <span>{lang === "en" ? EN.director : RU.director}</span>
             <span>{film.director}</span>
           </li>
           <li className={styles.screenwriter}>
-            <span>Writer</span>
+            <span>{lang === "en" ? EN.writer : RU.writer}</span>
             <span>{film.director}</span>
           </li>
           <li className={styles.producer}>
-            <span>Producer</span>
+            <span>{lang === "en" ? EN.producer : RU.producer}</span>
             <span>{film.producer}</span>
           </li>
         </ul>

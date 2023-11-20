@@ -65,5 +65,5 @@ export const RU = {
   eye_color: "Цвет глаз",
   skin_color: "Цвет кожи",
   more_information: "Дополнительная информация",
-  film_participation: "Фильмы с участием",
+  film_participation: "Фильмы с участием ",
 };
