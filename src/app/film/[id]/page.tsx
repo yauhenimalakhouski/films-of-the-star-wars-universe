@@ -18,10 +18,10 @@ export default async function FilmPage({ params: { id } }: PageProps) {
 
   return (
     <div className={styles.root}>
-      <FilmPageDescription film={film}/>
+      <FilmPageDescription film={film} />
       <FilmTrailer filmId={id} />
-      <FilmCharactersContainer film={film}/>
-      <RecommendedMoviesContainer episodeId={film.episode_id}/>
+      <FilmCharactersContainer film={film} />
+      <RecommendedMoviesContainer episodeId={film.episode_id} />
     </div>
   );
 }
