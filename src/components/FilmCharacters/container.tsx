@@ -11,9 +11,13 @@ export const FilmCharactersContainer = ({ film }: CompProps) => {
   const filmCharacters = film.characters;
   const {
     data: characters,
-    isFetching,
+    isLoading,
     isSuccess,
   } = useGetCharactersQuery(undefined);
+
+  if(isLoading){
+    return <div>...Loading</div>
+  }
 
   if (!characters) {
     return null;
