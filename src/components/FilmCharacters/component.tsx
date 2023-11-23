@@ -9,6 +9,7 @@ import { useAppSelector } from "@/store/reduxHooks/reduxHooks";
 import { selectLang } from "@/store/features/userSettings/selectors";
 import { EN } from "@/consts/dictionaries/en";
 import { RU } from "@/consts/dictionaries/ru";
+import { usePathname } from "next/navigation";
 
 type CompProps = {
   characters: CharacterType[];
@@ -16,9 +17,15 @@ type CompProps = {
 
 export const FilmCharacters = ({ characters }: CompProps) => {
   const lang = useAppSelector(selectLang);
+  const pathname = usePathname();
+  useEffect(()=>{
+    setCurrentFilmCharacters([]);
+  }, [pathname])
   const [filmCharacters, setFilmCharacters] = useState<CharacterType[]>(
     characters.slice()
   );
+
+
   const [currentFilmCharacters, setCurrentFilmCharacters] = useState<
     CharacterType[]
   >([]);
@@ -37,6 +44,8 @@ export const FilmCharacters = ({ characters }: CompProps) => {
       setIsBtnShown(false);
     }
   }, [charactersCount]);
+
+  
 
   return (
     <div className={styles.root}>
