@@ -16,7 +16,6 @@ let initialState: sortType = {
 
 if (typeof window !== "undefined") {
   initialState.sortType = loadSortTypeFromLocalStorage();
-  // initialState.lang = loadLangFromLocalStorage();
 }
 
 export const userSettingsSlice = createSlice({
